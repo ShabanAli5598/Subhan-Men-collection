@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding:0px;
+        background-image:url('./formbg.jpeg');
+        background-size:cover;
+        background-repeat:no-repeat;
+    }
+    :root{
+        --hgradient : linear-gradient(to right,#68f2d899, #6a80e880);
+        --btngradient: linear-gradient(to left,#68f2d899, #6a80e880);
+
+    }
+#header{
+    border: 1px solid black;
+    background-color: black;
+    color:white;
+    font-size: 1vw;
+    
+}
+#header h1{
+    text-transform: capitalize;
+    text-align: center;
+    text-shadow: 2px 4px 4px white;
+    font-size: 1.9vw;
+}
+#container{
+    border:1px solid wheat;
+    display:inline-block;
+    position:relative;
+    left:40%;
+    top:22vh;
+    width:22vw;
+    height: 36vh;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+
+
+#headingdiv{
+    background-image:var(--hgradient);
+    text-align: center;
+    text-transform: capitalize;
+    font-weight:bold;
+    padding:1vw;
+}
+.fcontrol{
+    margin:1vw 0;
+    position: relative;
+}
+.fcontrol input{
+    width:90%;
+    border-radius: 5px;
+    padding:0.5vw;
+    margin: 0.3vw;
+    text-indent:30px;
+    
+}
+
+.fcontrol label{
+    font-weight:bold;
+    color:white;
+    margin-left: 0.5vw;
+    
+}
+.fcontrol i {
+    position: absolute;
+    right:2vw;
+    top:1.8vw;
+    visibility: hidden; 
+}
+.fcontrol small {
+    position: absolute;
+    left:5%;
+    bottom:-15%;
+    visibility: hidden;
+}
+#btn{
+    border:none;
+    width:10.5vw;
+    text-align: center;
+    margin-left:4.7vw;
+    padding:0.5vw;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-shadow: 2px 4px 4px black;
+    background-image:var(--btngradient);
+}
+#btn:hover{
+    background-image:var(--hgradient);
+}
+/* icon show through js */
+/* case success */
+.fcontrol.success i.fa-circle-check{
+    visibility: visible;
+    color:rgb(2,214,113);
+    
+}
+.fcontrol.success input{
+    border-color: rgb(2,214,113);
+}
+/* case error */
+
+.fcontrol.error i.fa-circle-exclamation{
+    visibility: visible;
+    color:rgb(255,0,0);
+}
+.fcontrol.error small{
+    visibility: visible;
+    color:#ff0000;
+}
+.fcontrol.error input{
+    border-color:#ff0000;
+}
+
+#emailicon{
+     position:absolute;
+    top: 36px;
+    left: 20px;
+    width:0px; 
+    visibility: visible; 
+}
+#lockopen{
+    position:absolute;
+    top: 36px;
+    left: 20px;
+    width:0px; 
+    visibility: visible;
+
+}
+#signup{
+    margin-left:165px;
+    text-decoration: none;
+    font-size:0.9vw;
+    color:white;
+    font-weight:bold;
+    border: 1px solid wheat;
+    padding:2px;
+    border-radius: 2px;; 
+}
+#signup:hover{
+    background-image: var(--btngradient);
+    color:black;
+
+}
+#or{
+    margin-left:185px;
+     font-size:0.7vw;
+}
+
+@media (max-width:1199px) {
+    body{
+        background-repeat: repeat;
+        position: relative;
+    }
+    #header h1{
+        font-size:4vw;
+        
+    }
+    #headingdiv{
+        font-size:27px;
+       
+    }
+    #container{
+        width: 50%;
+        position: absolute;
+        left: 237px;
+    }
+    .fcontrol input{
+        padding:10px;
+        font-size:25px;
+        text-indent: 50px;
+        margin-top: 20px;;
+        
+
+    }
+    .fcontrol{
+        position: relative;
+    }
+    .fcontrol label{
+        font-size:25px;
+    }
+    .fcontrol small{
+    
+    font-size:25px;
+    
+    }
+    .fcontrol i{
+        font-size:25px;
+        position:absolute;
+        right:45px; 
+        top:60px;
+    }
+    #btn{
+        width: 40vw;
+        padding:1vw;
+        font-size: 25px;
+        margin-top:20px;
+    }
+    #or{
+        display:none;
+    }
+    #signup{
+        font-size: 25px;
+        margin:200px;
+        text-transform:capitalize;
+        
+    }
+    #emailicon{
+     position:absolute;
+    top:60px;
+    font-size:25px;  
+}
+#lockopen{
+    position:absolute;
+    top: 60px;
+    font-size:25px;
+}
+
+
+}
+
+
+@media (max-width : 600px) {
+    body{
+        background-repeat:repeat;
+    }
+    
+    #header{
+        width: 100%;
+        height:auto;
+        padding:3vw;  
+    }
+    #header h1{
+        font-size:4vw;
+    }
+  
+    #container{
+        width: 340px;
+        height: auto;
+        margin-left: -63vw;
+
+    }
+    .fcontrol input{
+        margin: 1.8vw;
+        width: 95%;
+        padding: 7px;
+        box-sizing: border-box;
+        font-size: 18px; 
+        text-indent: 30px;;
+        
+
+    }
+    .fcontrol i{
+        font-size: 4.5vw;
+        position: absolute;
+        right: 5vw;
+        top: 9.7vw;
+    }
+    .fcontrol label{
+        font-size:15px;
+    }
+    .fcontrol small{
+        font-size:15px
+
+    }
+    #emailicon{
+        position: absolute;
+        top:35px;
+        font-size:18px;
+    }
+    #lockopen{
+        position: absolute;
+        top:35px;
+        font-size:18px;
+
+    }
+    #btn{
+        width: 40vw;
+        margin:2vw 22vw;
+        padding:2vw;
+        font-size:15px;
+
+    }
+    #or{
+        font-size: 11px;
+        margin: 8px 0px 0px 145px;
+        color: white;
+        font-weight: bold;
+    }
+
+    #signup{
+        font-size: 14px;
+        margin: 20px 0 5px 126px;
+    }
+
+
+
+
+    
+}
+
+</style>
+<body>
+    <div id="header">
+        <h1> wel come to log in</h1>
+        
+    </div>
+
+    <div id="container">
+        <form id="form" action="/login" method="post">
+            <div id="headingdiv">log in</div>
+
+        <div class="fcontrol">
+            
+            <label>Email</label>
+            <i class="fa-solid fa-envelope" style="color: #e10e63;" id="emailicon"></i>
+            <input type="email" placeholder="Enter Email" size="28" autocomplete="on" id="email" name="email">
+            <i class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <small>error</small>
+        </div>
+        
+        <div class="fcontrol">
+            <label>password</label>
+            <i class="fa-solid fa-lock-open"style="color: #e10e63;" id="lockopen"></i>
+            <input type="password" placeholder="Enter password" id="password" name="password">
+            <i class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <small>error</small>
+
+        </div>
+        <button id="btn">login</button><br><span id="or">OR</span><br>
+        <a href="./registor.html" id="signup"> sign up</a>
+        </form>
+
+    </div>
+    <script>
+        let form = document.getElementById('form');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+
+        // errormsg function 
+        function errormsg(index,msg) {
+            let parent = index.parentElement;
+            parent.className = 'fcontrol error';
+            let small = parent.querySelector('small');
+            small.innerHTML=msg;
+        }
+        // success function
+        function success (index) {
+            let parent = index.parentElement;
+            parent.className = 'fcontrol success';
+        }
+
+        function validation () {
+            let emailval = email.value.trim();
+            let passwordval = password.value.trim();
+
+            // email validation
+            if(emailval=="") {
+                errormsg(email,'Email can not be blank');
+            }else if(emailval=='/^[^\s@]+@[^\s@]+\.[^\s@]+$/'){
+                errormsg(email,'please enter valid email')
+            }else{
+                success(email);
+            }
+
+            //pasword validation
+            if(passwordval==""){
+                errormsg(password,'password can not be blank');
+            }else if(passwordval.length<=7){
+                errormsg(password,'Password require mini 8 char')
+                
+            }else{
+                success(password);
+            }
+        }
+
+        form.addEventListener('click',()=>{
+           
+            validation();
+        })
+
+    </script>
+    
+</body>
+</html>

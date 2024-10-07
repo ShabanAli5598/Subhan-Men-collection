@@ -1,0 +1,570 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+#title {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    text-transform: capitalize;
+    text-shadow: 2px 4px 4px white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height:80px;
+
+}
+
+ #title h1 {
+    margin-left: 20%;
+    font-size: 2vw;
+}
+
+
+#logo {
+    width: 8%;
+    height: auto;
+    margin-left: 100px;
+    float: left;
+}
+
+
+
+/* navigation bar */
+
+#navi-container {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    margin-top: 4px;
+    padding: 0%;
+    height: 80px;
+
+}
+
+#navi-container ul {
+    display: flex;
+    justify-content: center;
+    line-height: 40px;
+    
+}
+
+#navi-container ul li {
+    list-style-type: none;
+    text-transform: capitalize;
+    padding: 0.3vw; 
+    position: relative;
+    
+}
+
+#navi-container ul a.active {
+    background-color: white;
+    color: black;
+    border-radius: 0.5vw;
+}
+
+#navi-container ul a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+     margin: 0.1vw; 
+    padding: 0.5vw;
+
+}
+
+#navi-container ul a:hover {
+    color: black;
+    background-color: white;
+    border-radius: 0.5vw;
+}
+
+
+
+
+
+
+/* Dropdown styles */
+
+.dropdown {
+    max-width: 7em;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-left: 0.3vw;
+    margin-top: 7px;
+    padding: 0;
+    font-size: 1em;
+    
+}
+
+
+.dropdown-btn {
+    background-color: black;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5vw;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: 1px solid white;
+}
+
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 3.2em;
+    left: -40px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+
+}
+
+.dropdown-content li {
+    background: black;
+    margin-top: 3px;
+    padding: 0;
+    height: 0.9em;
+
+}
+
+.dropdown-content li a {
+    display: block;
+    position: absolute;
+    top: -20px;
+    font-size: 0.9em;
+    text-transform: capitalize;
+    border: none !important
+}
+
+.dropdown-content {
+    visibility: hidden;
+}
+
+.dropdown-btn:focus+.dropdown-content {
+    visibility: visible;
+}
+
+.dropdown-btn:focus>.arrow {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-content li {
+    position: relative;
+    left: 100%;
+    transition: all 0.5s ease-in;
+    border: 1px solid white;
+}
+
+.dropdown-btn:focus+.dropdown-content li {
+    left: 0;
+}
+
+
+
+/* responsive nav bar bottom */
+
+#checkbtn {
+    float: right;
+    font-size: 30px;
+    line-height:80px;
+    margin-right: 10px;
+    display: none;
+}
+#check{
+    display: none;
+}
+#check:checked ~ ul{
+    left: 0;
+}
+
+/* mobile icons */
+
+#mobileicon{
+    display:none; 
+}
+
+
+/*  resonsive mobile account icons */
+.mobileaccounticon{
+    text-transform:capitalize;
+    text-decoration:none;
+    color:white
+}
+.mobileaccounticon:hover{
+    border:1px solid white;
+    background-color: white;
+    color:black;
+    padding:5px;
+}
+
+
+
+
+
+
+/* imgae sliding */
+
+
+
+
+.slideshow-container {
+    position: relative;
+}
+
+.slides {
+    display: none;
+
+}
+
+.simage {
+    width: 100%;
+    height: 800px;
+}
+
+.text {
+
+    font-size: 1vw;
+    position: absolute;
+    bottom: 1%;
+    left: 47%;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    padding: 0.5%;
+    border-radius: 15%;
+
+
+}
+
+.numbertext {
+    color: black;
+    display: inline-block;
+    position: absolute;
+    left: 0.5%;
+    border: 1px solid white;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 0.5%;
+    z-index: 1;
+    font-size: 1vw;
+
+
+
+}
+
+
+
+
+
+/* insert animation of picture changes */
+/* 
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    form {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+
+    ;
+} */
+
+.simage {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    position: relative;
+}
+
+
+
+
+
+
+/* Home T-shirts Images */
+
+
+#imgcontainer2 {
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+    justify-content: space-evenly;
+
+}
+
+.divtimg {
+
+    display: inline-block;
+    margin: 3vw;
+    width: 26vw;
+    height: 40vw;
+}
+
+.divtimg img {
+    width: 26vw;
+    height: 40vw;
+
+}
+
+.divtimg p {
+
+    margin-top: 0px;
+    text-align: center;
+    background-color: #dadada;
+    text-decoration: none;
+    color: black;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 1vw;
+
+}
+
+
+.divtimg a {
+    text-decoration: none;
+}
+
+/* images and text hover */
+
+.divtimg img:hover {
+    opacity: 0.5;
+}
+
+.divtimg p:hover {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+/* footer */
+
+
+#footer {
+    border: 1px solid #dadada;
+    background-color: #dadada;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    justify-content: space-around;
+
+
+
+}
+
+.icon {
+    text-align: center;
+}
+
+
+
+
+
+@media (max-width: 700px) {
+
+    /* header response */
+    #title {
+        width: 100%;
+
+    }
+
+    #logo {
+        width: 25%;
+        height: auto;
+        margin-left: 10px;
+    }
+
+    #title h1 {
+        font-size: 20px;
+        margin-left: 3%;
+    }
+
+    /* navigation bar responsive */
+   #checkbtn
+   {
+    display: block;
+
+   }
+
+   #navi-container ul{
+    width:100%;
+    height:100vh;
+    background-color: black;
+    position: fixed;
+    top:148px;
+    left:-120%;
+    z-index:2;
+    display: block;
+    transition: .5s;
+    border: 1px solid white;
+   
+    
+   }
+   #navi-container ul li{
+    position: relative;
+    left:40px;
+    padding:0px;
+    margin-top:15px;
+    text-align: center;
+    
+   }
+
+    #navi-container ul li a 
+    {
+        display: block;
+        width: 200px;
+        transform: translateX(0);     
+        opacity: 100%;
+   
+   }
+   #mobileicon{
+    display: block;
+    line-height: 80px;
+    
+   }
+   #mobileicon i {
+    margin-left: 20px;
+   } 
+
+  /* automatic slides images */
+
+
+    .simage {
+        width: 100%;
+        height: auto;
+    }
+
+    .numbertext {
+        font-size: 2.5vw;
+        
+    }
+
+    .text {
+        font-size: 2.5vw;
+    }
+    .dropdown{
+        position:relative;
+        left:40px;
+        
+    }
+    
+
+    .dropdown-btn{
+        width:204px;
+        height:30px;
+        position: relative;
+        
+    }
+    .dropdown-btn span{
+        margin-left:65px;
+    }
+
+    /* .dropdown-content{
+        position: relative;
+    }
+    .dropdown-content li {
+        position: absolute;
+        top:20px;
+        left:20px;
+    } */
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    
+    /* home t shirt imgaes responsive */
+
+    .divtimg {
+        width: 80vw;
+        height: 110vw;
+        margin: 5vw 12vw;
+    }
+
+    .divtimg img {
+        width: 80vw;
+        height: 110vw;
+    }
+
+    .divtimg p {
+        font-size: 2.5vw;
+    }
+
+    /* footer responsive */
+
+    #footer {
+        width: calc(100% - 5px);
+    }
+
+    .icon i {
+        font-size: 3.5vw;
+
+    }
+
+    .icon h3 {
+        font-size: 2vw;
+    }
+
+    .icon p {
+        font-size: 1.7vw;
+    }
+
+    
+    /* .dropdown-content {
+        margin-top: auto;
+
+    }
+
+    .dropdown-content li {
+        border: none;
+        margin-top: -20px;
+        height: auto;
+    }
+
+    .dropdown-content li a {
+        background-color: black;
+        border: 1px solid white;
+        width: 60px;
+        text-align: center
+    }
+
+    .dropdown-content li a:hover {
+        background-color: white;
+        color: black;
+    }  */
+
+}
+
+

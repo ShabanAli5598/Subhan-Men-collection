@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+       body {
+        margin:0;
+        padding :0;
+
+        }
+        #header{
+            border : 1px solid white;
+            background-color: black;
+            color: white;
+            text-align : center;
+            text-transform: capitalize;
+            text-shadow : 2px 4px 4px white;
+        }
+        #container{
+            display: flex;
+            align-items: center;
+            text-align: justify;
+            
+            
+        }
+        #left{
+            
+            float: left;
+            width: 60%;
+            
+        }
+        #left h3{
+            margin-left: 7vw;
+            text-shadow: 2px 4px 4px black;
+        }
+        #left p {
+            margin-left: 4vw;
+            line-height: 2vw;
+            padding: 0 6vw;
+            word-spacing: 4px;
+            
+        }
+        #right{
+            
+            width: 40%;
+            
+        }
+        #right img{
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        @media (max-width:600px) {
+            
+            #container{
+                flex-wrap:wrap;
+            }
+            #left{
+                width:100%;
+                height: auto;
+                
+            }
+            #left h3{
+                font-size:4vw;
+                margin-top: 8vw;
+            }
+            #left p {
+                font-size: 3vw;
+                line-height:3.5vw;
+            }
+            #right{
+                width: 70%;
+                height:auto;
+                margin : 10vw 15vw;
+                
+                
+                
+            }
+
+        }
+       
+        
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1> about us</h1>
+    </div>
+    <div id="container">
+    <div id="left">
+    <h3 >OUR VISION</h3>
+    <p >Our vision is to serve our customers with high quality & superior products and offer specialized services by going the ‘mile.’ We want break through the clutter in the ever growing fashion industry of Pakistan by continuously bringing creativity & innovation in our designs.</p>
+    
+    <h3>WHAT WE OFFER</h3>
+    <p>Our men’s  wear collections offer the distinctiveness of the eastern and western touch. This seamless blend retains all the qualities of the industry and qualifies for standards that Lakhany Official is known for. With the right touch of panache in Lakhany Official designs, you are absolutely ready to go any and everywhere!</p>
+    </div>
+
+    <div id="right">
+        <img src="./brand-logo.png">
+    </div>
+    </div>
+    
+</body>
+</html>

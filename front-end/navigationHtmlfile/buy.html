@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222323;
+
+
+        }
+
+        #header {
+            border: 1px solid black;
+            color: white;
+            text-transform: capitalize;
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+        #header i {
+            float: left;
+            font-size: 30px;
+            position: absolute;
+            left: 38%;
+            bottom: 1.9vw;
+        }
+
+        #header h1 {
+            text-shadow: 2px 4px 4px white;
+        }
+
+        #container {
+
+            display: inline-block;
+            position: relative;
+            left: 15%;
+            top: 0vw;
+            width: 31.3%;
+
+        }
+
+        #form {
+            padding: 10px;
+
+
+        }
+
+        .form-control {
+
+            position: relative;
+        }
+
+        .form-control input {
+            width: 100%;
+            padding: 1vw;
+            border-radius: 10px;
+            margin: 0.3vw;
+        }
+
+        .form-control label {
+            text-transform: capitalize;
+            font-weight: bold;
+            color: white;
+        }
+
+        
+        .form-control i {
+            position: absolute;
+            right: -16px;
+            bottom: 45px;
+            color: black;
+            visibility: hidden;
+        }
+
+        .form-control small {
+            color: red;
+            margin-left: 1.5vw;
+            visibility: hidden;
+        }
+
+       
+
+        #country {
+            width: 108%;
+            padding: 1vw;
+            border-radius: 10px;
+        }
+
+        #name {
+            width: 29vw;
+            display: flex;
+            margin-top: 10px;
+
+        }
+
+        #divlastname {
+            margin-left: 18%;
+        }
+
+        #city {
+            width: 29vw;
+            display: flex;
+        }
+
+        #postalcode {
+            margin-left: 110px;
+        }
+       
+
+        #Shippingmethod input{
+            border: 3px solid rgb(2, 214, 113);
+        }
+       
+        #Shippingmethod i {
+            visibility: visible;
+            color:rgb(2, 214, 113);
+            position: absolute;
+            bottom: 1.4vw;;
+        }
+       
+
+        .paymentdiv {
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 15px;
+            color: black;
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        .paymentdiv input {
+            margin-left: -12vw;
+
+        }
+
+
+        /* validation success case */
+        .form-control.success i.fa-circle-check {
+            color: rgb(2, 214, 113);
+            visibility: visible;
+        }
+
+        .form-control.success input {
+            border-color: rgb(2, 214, 113);
+        }
+
+        /* validation failed case */
+        .form-control.error i.fa-circle-exclamation {
+            color: red;
+            visibility: visible;
+        }
+
+        .form-control.error small {
+            visibility: visible;
+        }
+
+        .form-control.error input {
+            border-color: red;
+        }
+
+        #btn {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            background-image: linear-gradient(to right, #68f2d899, #6a80e880);
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-left: 1.7vw;
+            margin-top: 10px;
+            transition: all 2s ease-in-out;
+
+        }
+
+        #btn:hover {
+            background-image: linear-gradient(to left, #68f2d899, #6a80e880);
+
+        }
+
+
+        #display-container {
+            width: 50%;
+            height: 45.5vw;
+            border: 1px solid black;
+            border-radius: 5px;
+            float: right;
+            margin-top: 2px;
+            background-color: white;
+
+        }
+
+ 
+           
+        @media (max-width : 1199px) {
+
+            #header i {
+                position: absolute;
+                left:270px;
+                bottom: 33px;;
+            }
+            #container{
+                margin-left: -100px;
+                width:40%;
+            }
+
+            #divlastname{
+                width:100%;
+                margin-left: 60px;
+            }
+           
+            #name input{
+                width: 150px;
+            }
+            #city input {
+                width: 150px;
+            }
+            #postalcode{
+                margin-left: 60px;;
+            }
+            .form-control{
+                position: relative;
+            }
+
+            .form-control i {
+                position: absolute;
+                top:32px;
+            }
+            #name i{
+                position: absolute;
+                right:15px;
+            }
+           #city i {
+                position:absolute;
+                right :15px;
+
+            }
+            
+        }
+
+        @media (max-width : 991px) {
+            #header i {
+                position: absolute;
+                left:180px;
+            }
+            #divlastname{
+                margin-left: 5px;
+            }
+            #divlastname input{
+                width: 130px;;
+            }
+            #postalcode{
+                margin-left: 5px;
+                
+            }
+            #postalcode input{
+                width:130px;
+            }
+            
+           
+        } 
+
+        
+
+
+        @media (max-width : 600px) {
+            #header {
+                font-size: 2.5vw;
+                width: 100%;
+
+            }
+
+            #header i {
+                font-size: 5vw;
+                position: absolute;
+                left: 10vw;
+                bottom: 6vw;
+            }
+
+            #container {
+                width: 100%;
+                height: auto;
+                margin-left: -11%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form-control {
+                margin-top: 0vw;
+            }
+
+            .form-control label {
+                font-size: 3.5vw
+            }
+
+            .form-control input {
+                width: 90%;
+                padding: 1.8vw;
+                font-size: 3.9vw;
+                margin: -0vw;
+            }
+
+            .form-control i {
+                position: absolute;
+                right: 37px;
+                bottom: 28px;
+                font-size: 3.9vw;
+            }
+
+            #country {
+                width: 95%;
+
+            }
+
+            #name {
+                width: 320px;
+            }
+            #name i {
+                position:absolute;
+                top:28px;
+                right:8px;
+            }
+
+            #divlastname {
+                margin-left: 10px;
+            }
+
+
+            #city {
+                width: 95%;
+
+            }
+
+            #postalcode {
+                margin-left: 10px;
+                
+            }
+
+
+            .paymentdiv {
+                font-size: 3vw;
+                width: 86%;
+            }
+            #Shippingmethod i {
+                position:absolute;
+                bottom:2.2vw;
+            }
+
+            .paymentdiv input {
+                font-size: 3vw;
+                float: left;
+                padding: 0px;
+                margin-left: -35vw;
+            }
+
+            #btn {
+                width: 80%;
+                margin: 1.5vw 8.5vw;
+                transition: all 2s ease;
+            }
+
+            #display-container {
+                width: 90%;
+                height: 40vh;
+                position: absolute;
+                left: 6vw;
+
+            }
+
+        }
+
+  
+    </style>
+</head>
+
+<div id="header">
+    <i class="fa-brands fa-slack" style="color: #ffffff;"></i>
+    <h1>subhan men's collection</h1>
+</div>
+
+<div id="container">
+    <form id="form">
+
+        <!-- contact -->
+        <div class="form-control">
+            <label>contact</label>
+            <input type="email" placeholder="Enter Email" id="email">
+            <i class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <small>error</small>
+        </div>
+        <!-- country -->
+        <div class="form-control">
+            <label>country</label>
+            <select id="country">
+                <option>
+                    pakistan
+                </option>
+
+            </select>
+
+        </div>
+        <!-- name -->
+        <div class="form-control" id="name">
+            <div>
+                <label>name</label>
+                <br> <input type="text" placeholder="Enter name" id="fname">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>error</small>
+            </div>
+            <!-- last name -->
+            <div id="divlastname">
+                <label>Last name</label>
+                <br><input type="text" placeholder="Last name" id="flastname">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>error</small>
+            </div>
+
+        </div>
+
+
+        <!-- address -->
+        <div class="form-control">
+            <label>Address</label>
+            <input type="text" placeholder="Address" autocomplete="on" id="address">
+            <i class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <small>error</small>
+        </div>
+        <!-- city -->
+        <div class="form-control" id="city">
+            <!-- city -->
+            <div>
+                <label>City</label>
+                <input type="text" placeholder="City" autocomplete="on" id="fcity">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>error</small>
+            </div>
+
+            <!-- postal code -->
+            <div id="postalcode">
+                <label>postal code</label>
+                <input type="text" placeholder="Postal code(optional)" autocomplete="on">
+
+            </div>
+        </div>
+
+        <!-- phone -->
+        <div class="form-control">
+            <label>Phone</label>
+            <input type="phone" placeholder="Phone" autocomplete="on" id="phone">
+            <i class="fa-solid fa-circle-check"></i>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <small>error</small>
+        </div>
+
+        <!-- shipping method -->
+
+        <div class="form-control" id="Shippingmethod">
+            <label>Shipping method</label>
+            <input type="text" value="Standard    :   250" readonly autocomplete="on" >
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <!-- payment  -->
+
+        <div class="form-control">
+            <label>Payment</label>
+            <hr>
+            <!-- <label> all transaction are secure and encrypted</label> -->
+            <div class="paymentdiv">
+                <input type="radio" name="payment" required value="cash on devlivery"><span>Cash On Delivery(COD)</span>
+                <hr><input type="radio" name="payment" required value="Credit/Debit Card-XPay"><span>Credit/Debit
+                    Card-XPay</span>
+            </div>
+        </div>
+        <button id="btn">pay now</button>
+</div>
+
+
+</form>
+<div id="display-container">
+
+</div>
+
+<script>
+    let form = document.getElementById('form');
+    let email = document.getElementById('email');
+    let name = document.getElementById('fname');
+    let lastname = document.getElementById('flastname');
+    let address = document.getElementById('address');
+    let city = document.getElementById('fcity');
+    let phone = document.getElementById('phone');
+
+
+    // errormsg function for validation to insert class
+    function errormsg(index, msg) {
+        let parent = index.parentElement;
+        parent.className = 'form-control error';
+        let small = parent.querySelector('small');
+        small.innerText = msg;
+
+    }
+    //  success msg function for validation
+    function successmsg(index) {
+        let parent = index.parentElement;
+        parent.className = 'form-control success';
+
+    }
+
+
+    function datavalidation() {
+
+        let emailval = email.value.trim();
+        let nameval = name.value.trim();
+        let lastnameval = lastname.value.trim();
+        let addressval = address.value.trim();
+        let cityval = city.value.trim();
+        let phoneval = phone.value.trim();
+        // email validation 
+        if (emailval == "") {
+            errormsg(email, 'Email can not be blank');
+        } else if (emailval == '/^[^\s@]+@[^\s@]+\.[^\s@]+$/') {
+            errormsg(email, 'Not a valid email')
+        } else {
+            successmsg(email);
+        }
+
+        // name validation 
+        if (nameval == "") {
+            errormsg(name, 'Name can not be blank');
+        } else if (nameval.length <= 3) {
+            errormsg(name, 'Name require min 4 char');
+        } else {
+            successmsg(fname);
+        }
+
+        //lastname validation
+
+        if (lastnameval == "") {
+            errormsg(lastname, 'Last Name can not be blank');
+        } else if (lastnameval.lenght <= 3) {
+            errormsg(lastname, 'Last Name require min 4 char');
+        } else {
+            successmsg(lastname);
+        }
+
+        //address validation 
+
+        if (addressval == "") {
+            errormsg(address, 'Address can not bo blank');
+        } else {
+            successmsg(address);
+        }
+
+        // city validation 
+
+        if (cityval == "") {
+            errormsg(city, 'City cant not be blank');
+        } else {
+            successmsg(city);
+        }
+
+        //phone validation 
+        if (phoneval == "") {
+            errormsg(phone, 'Phone can not be blank');
+        } else if (phoneval.length !== 11) {
+            errormsg(phone, 'Phone require min 11 no');
+        } else {
+            successmsg(phone);
+        }
+
+    }
+
+    form.addEventListener('click', () => {
+        datavalidation();
+
+    })
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>

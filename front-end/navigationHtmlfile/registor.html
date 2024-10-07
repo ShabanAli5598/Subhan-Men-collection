@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registor</title>
+    <!-- import font awesome icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* import google font */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-image: url('./formbg.jpeg');
+            background-repeat:no-repeat;
+            background-size:cover;
+            box-sizing: border-box;
+           
+            
+        }
+        /* create variable */
+
+        :root {
+            --headinggradient: linear-gradient(to right, #68f2d899, #6a80e880);
+            --btngradient: linear-gradient(to left, #68f2d899, #6a80e880);
+            --btnfont: "Kanit", sans-serif;
+        }
+
+        #header {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            text-transform: capitalize;
+            text-shadow: 2px 4px 4px white;
+            text-align: center;
+        }
+
+
+        /* form css */
+
+        #from-container {
+            border: 1px solid silver;
+            display: inline-block;
+            position: absolute;
+            right:40%;
+            top:120%;
+            background-color: aliceblue;
+            padding: 0%; 
+            border-radius: 10px;
+            text-align: justify;
+            width: 25%;
+            height:auto;
+
+        }
+
+        #form {
+            padding: 1vw;
+        }
+
+        #heading{
+            position: relative;
+            top:-25px;
+            width: 100%;
+            height: auto;
+            border-radius:10px;
+            
+        }
+
+
+        #heading h2 {
+            padding: 15px;
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: 2px 4px 6px black;
+            background-image: var(--headinggradient);
+            font-size:1.5vw;
+
+
+        }
+
+        .form-control {
+            padding: 1vw 0;
+            position: relative;
+            top: -33px;
+
+        }
+
+        .form-control input {
+            width: 100%;
+            border-radius: 5px;
+            padding: 5px;
+            border-color:silver;
+            text-indent:30px;
+        }
+
+        #btn {
+            width: 100%;
+            padding: 0.5vw;
+            text-transform: capitalize;
+            font-family: var(--btnfont);
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 1vw;
+            border: none;
+            border-radius: 10px;
+            background-image: var(--btngradient);
+            transition: all 2s ease-in-out;
+            text-shadow: 2px 4px 4px black;
+        }
+
+        #btn:hover {
+            background-image: var(--headinggradient);
+        }
+
+        
+
+        .form-control small {
+            visibility: hidden;
+        }
+
+        .form-control i {
+            position: absolute;
+            right: 20px;
+            bottom: 45px;
+            visibility: hidden;
+        }
+
+        /* if validation pass then add class through js */
+
+        .form-control.success input {
+            border-color: #2ecc71;
+        }
+
+        .form-control.success i.fa-circle-check {
+            visibility: visible;
+        }
+
+        /* if validation failed then add this class through js */
+        .form-control.error input {
+            border-color: #ff0000;
+        }
+
+        .form-control.error i.fa-circle-exclamation {
+            visibility: visible;
+        }
+
+        .form-control.error small {
+            visibility: visible;
+            color:#ff0000;
+        }
+
+        #user{
+            visibility: visible;
+            position: absolute;
+            left:10px;
+            width:0px;
+            color:#e10e63;
+        }
+        #lnameicon{
+            visibility: visible;
+            position: absolute;
+            left:10px;
+            width:0px;
+            color:#e10e63;
+        }
+        #phoneicon{
+            visibility: visible;
+            position: absolute;
+            left:10px;
+            width:0px;
+            color:#e10e63;
+        }
+        #emailicon{
+            visibility: visible;
+            position: absolute;
+            left:10px;
+            width:0px;
+            color:#e10e63;
+        }
+        #lockicon{
+            visibility: visible;
+            position: absolute;
+            left:10px;
+            width:0px;
+            color:#e10e63;
+            
+        }
+
+        @media (max-width : 1199px) {
+            body{
+                background-repeat:repeat;
+                position: relative;
+
+            }
+            #heading h2{
+                font-size: 2.5vw;
+
+            }
+            #from-container{
+                width:50%;
+                height: 80vw;
+                position: absolute;
+                right:25%;
+                top:260px;  
+            }
+            #from-container label{
+            font-size: 2.5vw;
+
+          }
+          #from-container small{
+            font-size: 2.5vw;
+          }
+          #from-container input{
+            font-size: 2.5vw;
+            width: 95%;
+          }
+
+          #btn{
+            font-size:2vw;
+            padding:1vw;
+            width: 80%;
+            margin: -113px 0 42px 40px
+            
+          }
+          #from-container i{
+            position: absolute;
+            bottom:50px;
+            font-size:2.5vw;
+          }
+          #from-container input{
+            text-indent:45px;
+          }
+
+
+
+            
+        }
+        @media (max-width: 820px) {
+
+            #from-container i{
+                position: absolute;
+            bottom:40px;
+            
+
+            }
+
+            
+        }
+
+        @media (max-width: 600px) {
+          body{
+            background-image:url('./formbg.jpeg');
+            background-repeat: repeat;
+            background-size:100% auto;
+          }
+          #from-container{
+            width: 79%;
+            height: auto;
+            margin:-40vw -15vw;
+            
+          }
+          #from-container label{
+            font-size: 3.5vw;
+
+          }
+          #from-container input{
+            font-size: 4vw;
+            width: 95%;
+          }
+          #heading{
+            margin:5.8vw 0vw;
+             
+          }
+          #heading h2{
+            font-size:4vw;
+          }
+          #btn{
+            font-size:3vw;
+            padding:1vw;
+            width: 70%;
+            margin: -113px 0 42px 40px
+            
+          }
+          #from-container i{
+            position: absolute;
+            top:8.5vw;
+            right: 2vw;
+            font-size:4vw;
+          }
+         
+            
+        }
+        
+      
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>register your slef</h1>
+    </div>
+    <div id="from-container">
+        <form id="form" method="post" action="/register">
+            <div id="heading">
+                <h2>register your self</h2>
+            </div>
+
+            <!-- first name -->
+
+            <div class="form-control">
+                <label>First-Name</label>
+                <i class="fa-solid fa-user" id="user"></i>
+                <input type="text" placeholder="Enter Name" autocomplete="on" id="fname" name="fname">
+                <small>this is error</small>
+                <i class="fa-solid fa-circle-check" style="color: #2ecc71"></i>
+                <i class="fa-solid fa-circle-exclamation" style="color: rgb(255,0,0)"></i>
+            </div>
+            <!-- last name -->
+
+            <div class="form-control">
+                <label>Last-Name</label>
+                <i class="fa-solid fa-user" id="lnameicon"></i>
+                <input type="text" placeholder="Enter last name" autocomplete="on" id="lname" name="lname">
+                <small> this is error</small>
+                <i class="fa-solid fa-circle-check" style="color: #2ecc71"></i>
+                <i class="fa-solid fa-circle-exclamation" style="color: #ff0000"></i>
+
+            </div>
+            <!-- phone -->
+
+            <div class="form-control">
+                <label>Phone</label>
+                <i class="fa-solid fa-phone-volume" id="phoneicon"></i>
+                <input type="phone" placeholder="Enter Phone" autocomplete="on" id="phone" name="phone">
+                <small>this is errror</small>
+                <i class="fa-solid fa-circle-check" style="color: #2ecc71"></i>
+                <i class="fa-solid fa-circle-exclamation" style="color: #ff0000"></i>
+            </div>
+            <!-- email -->
+
+            <div class="form-control">
+                <label>Email</label>
+                <i class="fa-solid fa-envelope" id="emailicon"></i>
+                <input type="email" placeholder="Enter Email" autocomplete="on" id="email" name="email">
+                <small>this is error</small>
+                <i class="fa-solid fa-circle-check" style="color: #2ecc71"></i>
+                <i class="fa-solid fa-circle-exclamation" style="color: #ff0000"></i>
+
+            </div>
+            <!-- password -->
+            <div class="form-control">
+                <label>Password</label>
+                <i class="fa-solid fa-lock" id="lockicon"></i>
+                <input type="password" placeholder="Enter password" id="password" name="password">
+                <small> this is error</small>
+                <i class="fa-solid fa-circle-check" style="color: #2ecc71;"></i>
+                <i class="fa-solid fa-circle-exclamation" style="color: #ff0000"></i>
+
+      
+            </div>
+
+            <button id="btn" type="submit">create Account</button>
+            
+        </form>
+
+    </div>
+
+    <script>
+        // get html input values
+
+       let fnameval = document.getElementById('fname');
+       let lnameval = document.getElementById('lname'); 
+       let phoneval = document.getElementById('phone'); 
+       let emailval = document.getElementById('email'); 
+       let passwordval = document.getElementById('password');
+       
+       
+        
+
+
+            //errormsg function
+            function errormsg(id,msg){
+                let parent = id.parentElement;
+                parent.className = 'form-control error';
+                let small= parent.querySelector('small');
+                small.innerHTML=msg;
+            }
+
+            // success function
+            function successmsg(id) {
+                let parent = id.parentElement;
+                parent.className ='form-control success';
+            }
+
+            
+
+
+function validation () {
+       let fnameval = fname.value.trim();
+        let lnameval = lname.value.trim();
+        let phoneval = phone.value.trim();
+        let emailval = email.value.trim();
+         let passwordval= password.value.trim(); 
+
+    
+    
+        // first name validation complete
+        if(fnameval =="") {
+            errormsg(fname,'Name can not be blank'); // if valdation fail then show this function
+
+        }else if(fnameval.length<=3) {
+            errormsg(fname,'Name require min 4 char');
+        }else{
+            successmsg(fname);                       // if validation pass then show this function
+        }
+
+
+        // last name validation complete
+
+        if(lnameval==""){
+            errormsg(lname,'Last name can not be blank');
+        }else{
+            successmsg(lname);
+        }
+
+        //phone validation complete
+
+        if(phoneval==""){
+            errormsg(phone,'phone can not be blank');
+        }else if(phoneval.length!=11){
+            errormsg(phone,'phone require min 11 char');
+        }else {
+            successmsg(phone);
+        }
+
+        //email validation complete
+        if(emailval==""){
+            errormsg(email,'email can not be blank');
+        }else if(emailval=="/^[^\s@]+@[^\s@]+\.[^\s@]+$/") {
+            errormsg(email,'Not a valid email address');
+        }else{
+            successmsg(email);
+        }
+
+        // password validation complete
+        if(passwordval==""){
+            errormsg(password,'Password can not be blank');
+        }else if(passwordval.length<=7){
+            errormsg(password,'password require min 8 char');
+        }else {
+            successmsg(password);
+        }
+    }
+
+
+    let form = document.getElementById('form');
+    form.addEventListener('click',()=>{
+        validation();
+    })
+
+    </script>
+
+
+</body>
+
+</html>
